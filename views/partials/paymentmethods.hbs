@@ -1,0 +1,14 @@
+<body>
+     <pre id="responseData"></pre>
+       <script>
+                $(document).ready(function() {
+
+                    $.ajax({ url: 'http://localhost:9000/supportedpaymentmethods' }).done(function (data) {
+                        
+                        $("#responseData" ).append(JSON.stringify(data, undefined, 2));
+                    });
+
+        
+            });
+    </script>
+</body>
