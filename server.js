@@ -30,7 +30,7 @@ app.get('/supportedpaymentmethods', function (req, res) {
 
     
     }).catch((e)=>{
-            console.log(e)        
+            console.log(e.response.data)
        
     })
 
