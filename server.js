@@ -17,20 +17,20 @@ app.get('/', (req, res) => {
 app.get('/supportedpaymentmethods', function (req, res) {
 
     var headers = {
-            'app_id': 'com.zooz.docapp',
-            'private_key': 'bede7ee5-eaad-4c8a-bc1f-617ba28257ae',
+            'app_id': 'com.zooz.payu-sp',
+            'private_key': 'F7D576DE-ED0A-44C1-BE38-9298F13D94FC',
             'x-payments-os-env': 'test',
             'api-version': '1.2.0'
     };
     
-    axios.get("https://api.paymentsos.com/customers/e723ee51-5457-4839-badf-ac23bb1b2bc1", {
+    axios.get("https://api.paymentsos.com/supported-payment-methods", {
         'headers': headers}).then((response)=>{
 
          res.send(response.data)
 
     
     }).catch((e)=>{
-            console.log(e.message)        
+            console.log(e)        
        
     })
 
