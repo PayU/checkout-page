@@ -15,10 +15,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/supportedpaymentmethods', function (req, res) {
-
     var headers = {
-            'app_id': 'com.zooz.payu-sp',
-            'private_key': 'F7D576DE-ED0A-44C1-BE38-9298F13D94FC',
+            'app-id': 'com.zooz.payu-sp',
+            'private-key': 'f7d576de-ed0a-44c1-be38-9298f13d94fc',
             'x-payments-os-env': 'test',
             'api-version': '1.2.0'
     };
