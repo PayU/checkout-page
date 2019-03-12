@@ -138,7 +138,7 @@
     padding: 25px 50px 10px 0px;
   }
 
-  .select-css {
+  .selectpms {
     display: block;
     font-size: 16px;
     font-family: sans-serif;
@@ -162,20 +162,20 @@
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
   }
-  .select-css::-ms-expand {
+  .selectpms::-ms-expand {
     display: none;
   }
-  .select-css:hover {
+  .selectpms:hover {
     border-color: #888;
   }
-  .select-css:focus {
+  .selectpms:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
     box-shadow: 0 0 0 3px -moz-mac-focusring;
     color: #222; 
     outline: none;
   }
-  .select-css option {
+  .selectpms option {
     font-weight:normal;
   }
 

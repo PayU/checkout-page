@@ -1,8 +1,8 @@
-<select class="select-css"></select>
+<select class="selectpms"></select>
         <script>
                 $(document).ready(function() {
                     $.ajax({ url: 'http://localhost:9000/supportedpaymentmethods' }).done(function (data) {
-                            var options = $(".select-css");
+                            var options = $(".selectpms");
                             $.each(data, function() {
                                 data[0].supported_payment_methods.forEach((paymentmethods) => { 
                                 options.append(new Option(paymentmethods.display_name));
