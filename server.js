@@ -6,6 +6,8 @@ const port = process.env.PORT || 9000;
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/clientjs'));
+app.use(express.static(__dirname + '/css'));
 app.use(cors())
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials')

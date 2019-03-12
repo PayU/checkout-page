@@ -1,14 +1,16 @@
 <body>
-     <pre id="responseData"></pre>
-       <script>
+        <select class="select-css"></select>
+        <script>
                 $(document).ready(function() {
-
                     $.ajax({ url: 'http://localhost:9000/supportedpaymentmethods' }).done(function (data) {
-                        
-                        $("#responseData" ).append(JSON.stringify(data, undefined, 2));
+                            var options = $(".select-css");
+                            $.each(data, function() {
+                                data[0].supported_payment_methods.forEach((paymentmethods) => { 
+                                options.append(new Option(paymentmethods.display_name));
+                            });
+                            
+                         });
                     });
-
-        
             });
-    </script>
+        </script>
 </body>

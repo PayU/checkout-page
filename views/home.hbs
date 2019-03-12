@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" </script> </head > <body>
-            {{> securefields}}
-     <p>Payment Methods</p>
-            {{> paymentmethods}}
-
-    </body>
-
+   <head>
+      <!-- Bootstrap -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="bootstrap-tab.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="styles.css">
+      <meta charset="UTF-8">
+   </head >
+   <body>
+      <div class="container">
+         <div class="jumbotron">
+            <h1 class="display-4">Ready to pay?</h1>
+            <p class="lead">The checkout page is the final stop for customers shopping on your website. It’s the place where they finally part with their hard-earned cash and pay for your goods or services.</p>
+         </div>
+         <div id="paymentforms">
+            <ul class="nav nav-tabs">
+               <li class="active"><a data-toggle="tab" href="#cards">Pay with Credit Card</a></li>
+               <li><a data-toggle="tab" href="#otherpm">Other Payment Methods</a></li>
+            </ul>
+            <div class="tab-content">
+               <div id="cards" class="tab-pane fade in active">
+                  {{> securefields}}
+               </div>
+               <div id="otherpm" class="tab-pane fade">
+                  <p id="pmintro">If the provider you are transacting against supports the <a href="https://developers.paymentsos.com/docs/api/#operation/retrieve-supported-payment-methods" target="_blank">Get Supported Payment Methods API</a>, then the available payment methods will appear in the list below.</p>
+                  {{> paymentmethods}}
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>

@@ -1,89 +1,31 @@
 <!DOCTYPE html>
-<html>
-
-<script>
-  //POS.setEnvironment("test");
-</script>
-
-<body>
-  <script language="JavaScript" type="text/javascript" src="https://js.paymentsos.com/latest/secure-fields.min.js"></script>
-  <script>
-    POS.setPublicKey("99346d84-5187-4221-9c16-dc51a8de27fa");
-  </script>
-  <form id="payment-form">
-    <input type="text" id="cardholder-name" placeholder="John Doe" />
-    <input type="text" id="idnumber" placeholder="ID Number" />
-    <input type="text" id="idtype" placeholder="Passport, Driver's License" />
-    <input type="text" id="freetext" placeholder="free text" />
-    <div id="card-secure-fields">
-      <!-- This is where the payment form will be displayed -->
-    </div>
-    <button type=”submit”>Pay</button>
-  </form>
-  <script>
-    const style = {
-      base: { // Common to all input fields
-        color: 'green',
-        lineHeight: '40px',
-        fontWeight: 400,
-        fontSize: '13px',
-
-        // The Primary Account Number (PAN) field is always included in the form.
-        // You can style it here.
-        pan: {
-          fontSize: '13px'
-        },
-
-        // The expirationDate field is always included in the form.
-        // You can style it here.
-        expirationDate: {
-          color: 'blue',
-          fontSize: '13px',
-          // width: '70px'
-        },
-
-        // Unless you disable the cvv field, it will be included in the form.
-        // You can style it here.
-        cvv: {
-          color: 'blue',
-          fontSize: '13px',
-        },
-      }
-    };
-    //POS.disableCardImage();
-    //POS.disableSecurityNumber();
-    POS.disableLuhnValidation();
-    POS.setCardNumberPlaceholder("YOUR CARD NUMBER HERE");
-    POS.setExpirationDatePlaceholder("MM/YY");
-
-    POS.setStyle(style);
-
-    POS.initSecureFields('card-secure-fields');
-
-    document.getElementById('payment-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Exammple adding additional fields
-      // const identitydoc = {
-      //     number: document.getElementById('idnumber').value,
-      //     type: document.getElementById('idtype').value
-      // }
-      const additionalData = {
-        // Beware: The keys must match the xxx bla bla as in the Token reference.
-        holder_name: document.getElementById('cardholder-name').value, //required field
-        additional_details: {
-          freeText: document.getElementById('freetext').value
-        },
-        identity_document: {
-          number: document.getElementById('idnumber').value,
-          type: document.getElementById('idtype').value
-        }
-      }
-      POS.createToken(additionalData, function(result) {
-        console.log(result);
-      });
-    });
-  </script>
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+        <form id="payment-form">
+          <div class="group">
+            <label>
+              <span>Name</span>
+              <input id="cardholder-name" class="field" placeholder="John Doe" />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input id="phone" class="field" placeholder="(123) 456-7890" type="tel" />
+            </label>
+          </div>
+          <div class="group">
+            <label>
+              <span>Card</span>
+              <div id="card-secure-fields" class="field"></div>
+            </label>            
+          </div>
+          <button type="submit">Pay</button>
+        </form>  
+    <script src="https://js.paymentsos.com/latest/secure-fields.min.js"></script>
+    <script type='text/javascript' src="index.js"></script>     
+  </body>
 </html>
