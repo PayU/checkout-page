@@ -1,8 +1,8 @@
 # Sample Checkout Page
 
-This project shows sample code for a checkout page that allows customers to pay with credit card or with other payment methods (such as bank transfers). It uses the [Secure Fields form](https://developers.paymentsos.com/docs/using-the-secure-fields-form.html) for collecting a customer's card information and invokes the [Get Supported Payment Methods](https://developers.paymentsos.com/docs/api/#operation/retrieve-supported-payment-methods) API from a node server to fetch all supported additional payment methods. 
+This project shows sample code for a checkout page that allows customers to pay with credit card or with other payment methods (such as bank transfers). It uses the [Secure Fields Form](https://developers.paymentsos.com/docs/using-the-secure-fields-form.html) for collecting a customer's card information and invokes the [Get Supported Payment Methods](https://developers.paymentsos.com/docs/api/#operation/retrieve-supported-payment-methods) API from a node server to fetch all supported additional payment methods. 
 
-**Important note**: The sample code is shown for illustrative purposes only. You will need to modify the code if you want to use it in a production environment. For more information, see the Limitations section below. 
+**Important note**: The sample code is shown for illustrative purposes only. You will need to modify the code if you want to use it in a production environment. For more information, see the [Limitations](#limitations) section below. 
 
 # Running the Project
 
@@ -37,5 +37,5 @@ The sample code shown in `server.js` includes statements that are used for illus
 
 * `app.use(cors())`. CORS has only been enabled so that you can run the example in your localhost.
 
-* `app-id` and `private-key` are not passed securely.
+* `app-id` and `private-key` are not passed securely. Make sure to implement best practices for passing API keys in your server-side implementation.
 
