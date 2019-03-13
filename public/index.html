@@ -9,6 +9,9 @@
       <link rel="stylesheet" href="styles.css">
       <meta charset="UTF-8">
    </head >
+   <title>
+       Checkout Page
+   </title>
    <body>
       <div class="container">
          <div class="jumbotron">
@@ -22,16 +25,35 @@
             </ul>
             <div class="tab-content">
                <div id="cards" class="tab-pane fade in active">
-                  {{> securefields}}
+                <form id="payment-form">
+                    <div class="group">
+                      <label>
+                        <span>Name</span>
+                        <input id="cardholder-name" class="field" placeholder="John Doe" />
+                      </label>
+                      <label>
+                        <span>Phone</span>
+                        <input id="phone" class="field" placeholder="(123) 456-7890" type="tel" />
+                      </label>
+                    </div>
+                    <div class="group">
+                      <label>
+                        <span>Card</span>
+                        <div id="card-secure-fields" class="field"></div>
+                      </label>            
+                    </div>
+                    <button type="submit">Pay</button>
+            </form>  
                </div>
                <div id="otherpm" class="tab-pane fade">
                   <p id="pmintro">If the provider you are transacting against supports the <a href="https://developers.paymentsos.com/docs/api/#operation/retrieve-supported-payment-methods" target="_blank">Get Supported Payment Methods API</a>, then the available payment methods will appear in the list below.</p>
-                  {{> paymentmethods}}
+                  <select class="selectpms"></select>
                </div>
             </div>
          </div>
       </div>
       <script src="https://js.paymentsos.com/latest/secure-fields.min.js"></script>
-      <script type='text/javascript' src="index.js"></script>     
+      <script type='text/javascript' src="securefields.js"></script>
+      <script type='text/javascript' src="paymentmethods.js"></script>          
    </body>
 </html>

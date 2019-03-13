@@ -1,5 +1,4 @@
 const express = require('express')
-const hbs = require('hbs')
 const axios = require('axios')
 const cors = require('cors')
 const port = process.env.PORT || 9000;
@@ -9,12 +8,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/clientjs'));
 app.use(express.static(__dirname + '/css'));
 app.use(cors())
-app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/partials')
 
-app.get('/', (req, res) => {
-    res.render('home.hbs')
-});
 
 app.get('/supportedpaymentmethods', function (req, res) {
     var headers = {
