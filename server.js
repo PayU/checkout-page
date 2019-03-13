@@ -1,7 +1,6 @@
 const express = require('express')
 const axios = require('axios')
 const cors = require('cors')
-const port = process.env.PORT || 9000;
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -12,6 +11,8 @@ app.use(cors())
 
 app.get('/supportedpaymentmethods', function (req, res) {
     var headers = {
+            // Replace app-id and private-key with the id and private key of your Business Unit.
+            // The default provider configured in this Business Unit must support the Get Supported Payment Methods API.
             'app-id': 'com.zooz.payu-sp',
             'private-key': 'f7d576de-ed0a-44c1-be38-9298f13d94fc',
             'x-payments-os-env': 'test',
@@ -32,6 +33,6 @@ app.get('/supportedpaymentmethods', function (req, res) {
   });
 
 
-app.listen(port, ()=>{
-    console.log(`server is up on port ${port}`)
+app.listen('9000', ()=>{
+    console.log(`server is up on port 9000`)
 }); 
