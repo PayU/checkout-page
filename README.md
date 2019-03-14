@@ -23,7 +23,7 @@ Set your authentication keys:
 
 * Edit `server.js` and replace `app-id` and `private-key` with the id and private key of your Business Unit.
 
-* Edit `src\js\securefields.js` and replace `private-key` with the public key of your Business Unit.
+* Edit `src\js\securefields.js`. In `POS.setPublicKey('xxxxxxxxxxxxxxx')`, pass the public key of your Business Unit.
 
 **Note**: The default provider configured in your Business Unit must support the [Get Supported Payment Methods](https://developers.paymentsos.com/docs/api/#operation/retrieve-supported-payment-methods) API. Refer to the features overview in the relevant [provider guide](https://developers.paymentsos.com/docs/providers.html) to determine whether this API is supported by the provider defined in your Business Unit. If the provider does not support the API, you will still to be able to run the project (the list of other payment methods will simply be empty).
 
