@@ -1,4 +1,4 @@
-POS.setPublicKey('xxxxxxxxxxxxxxx');
+POS.setPublicKey('xxxxxxxxxxxxx');
 const style = {
   base:{
     color: 'blue',
