@@ -30,7 +30,7 @@ Set your authentication keys:
 Now run the node server:
 
 ```
-node server.js
+npm start
 ```
 
 You can view the checkout page in http://127.0.0.1:9000/index.html
