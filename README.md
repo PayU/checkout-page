@@ -9,7 +9,7 @@ This project shows sample code for a checkout page that allows customers to pay 
 To run the project, check it out with:
 
 ```
-git clone https://github.com/Zooz/checkoutpage.git
+git clone https://github.com/Zooz/checkout-page.git
 cd checkoutpage
 ```
 
