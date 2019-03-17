@@ -10,7 +10,7 @@ To run the project, check it out with:
 
 ```
 git clone https://github.com/Zooz/checkout-page.git
-cd checkoutpage
+cd checkout-page
 ```
 
 Install all dependencies:
