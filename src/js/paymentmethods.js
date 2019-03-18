@@ -23,6 +23,18 @@ $(document).ready(function () {
   });
 });
 
+$("#paybtnapms").click(function(){
+
+    if ($(".selectpms").val() != null) {
+        alert("The customer selected to pay with " + $(".selectpms").val() + ". Now handle the remainder of the payment flow!");
+      }  
+      
+    else {
+        alert("There are no payment methods available.");
+      }
+     
+    });
+
 function SortByName(a, b) {
     var aName = a.display_name.toLowerCase();
     var bName = b.display_name.toLowerCase();

@@ -76,6 +76,7 @@
     height: 48px;
     line-height: 48px;
     outline: none;
+    max-width: 480px;
   }
   
   button:focus {
@@ -147,7 +148,7 @@
     line-height: 1.3;
     padding: .6em 1.4em .5em .8em;
     width: 100%;
-    max-width: 400px; 
+    max-width: 480px; 
     box-sizing: border-box;
     margin: 0;
     border: 1px solid #aaa;
@@ -179,5 +180,4 @@
   .selectpms option {
     font-weight:normal;
   }
-
   
